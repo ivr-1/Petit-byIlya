@@ -1,0 +1,72 @@
+ 
+ .review-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  overflow: hidden;
+  background-color: var(--primary);
+  color: var(--secondary-text);
+ }
+ 
+ .review-container > header {
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  margin: -15px 0 0px 0;
+ }
+ 
+ .review-container hr {
+  width: 40%;
+  margin: 20px auto;
+  border: none;
+  height: 1px;
+  background-color: var(--secondary-text);
+  opacity: 20%;
+ }
+ 
+ .review-carousel {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  margin: 15px 0 0 0;
+  animation: scroll calc(var(--review-count) * 20s) linear infinite;
+  font-family: var(--font-secondary);
+ }
+ 
+ .review-carousel:hover {
+  animation-play-state: paused;
+ }
+ 
+ .review-carousel > div {
+  flex: 0 0 225px;
+ }
+ 
+ .review-carousel .carousel-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+ }
+ 
+ .review-carousel .carousel-body {
+  margin: 15px 0;
+ }
+
+ .review-carousel .carousel-signature {
+  font-style: italic;
+ }
+ 
+ @keyframes scroll {
+  0% {
+   transform: translateX(0);
+  }
+  100% {
+   transform: translateX(calc(-450px * (var(--review-count) / 2)));
+  }
+ }
+ 
+ @media screen and (max-width: 800px) {
+  .review-carousel:hover {
+   animation-play-state: running;
+  }
+ }

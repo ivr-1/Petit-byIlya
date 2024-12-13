@@ -1,0 +1,7 @@
+
+  .food-menu-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background-color: var(--background);
+  }

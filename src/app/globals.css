@@ -1,0 +1,28 @@
+:root {
+  --main-text: #575D56;
+  --secondary-text: #FFF0F0;
+  --primary: #62938A;
+  --primary-light: #8BAEA7;
+  --secondary: #FFA1A1;
+  --secondary-light: #FFC6C6;
+
+  --font-primary: var(--font-rocknroll), "RocknRoll One", sans-serif;
+  --font-secondary: var(--font-judson), "Judson", serif;
+  --font-logo: var(--font-risque), "Risque", serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;  
+  background-color: #F0F0EE;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  padding-top: 56px;
+  flex: 1 0 auto;
+}

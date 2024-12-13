@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "items": [
+      {
+        "name": "Brioche Loaf",
+        "quantity": 5
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "items": [
+      {
+        "name": "Quiche Lorraine",
+        "quantity": 1
+      }
+    ]
+  }
+]

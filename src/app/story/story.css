@@ -1,0 +1,107 @@
+.story-section {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1vw;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.story-section .bio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 0 20px;
+  gap: 20px;
+  color: var(--main-text);
+}
+
+.story-section .bio h2 {
+  font-family: var(--font-primary);
+  color: var(--primary);
+}
+
+.story-section .bio > :first-child,
+.story-section .bio > :last-child {
+  flex: 0 0 15%;
+  max-width: 15%;
+  height: auto;
+  object-fit: contain;
+}
+
+.story-section .bio > :first-child {
+  align-self: flex-start;
+  transform: rotate(10deg);
+}
+
+.story-section .bio > :first-child:hover {
+  transform: rotate(10deg);
+  animation: shake-tower 1s ease-in-out infinite;
+}
+
+.story-section .bio > :last-child {
+  align-self: flex-end;
+  margin-top: 200px;
+  transform: rotate(-10deg);
+}
+
+.story-section .bio > :last-child:hover {
+  animation: shake-statue 1s ease-in-out infinite;
+}
+
+.story-section .bio article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 60%;
+  max-width: 60%;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 40px;
+  font-family: var(--font-secondary);
+  font-size: 1.3rem;
+}
+
+.story-section .bio article img {
+  max-width: 210px;
+  height: auto;
+}
+
+@keyframes shake-tower {
+  0%, 100% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+}
+
+@keyframes shake-statue {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+}
+
+@media (max-width: 768px) {
+  .story-section .bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 0px;
+    padding: 0 20px 20px 20px;
+  }
+
+  .story-section .bio article {
+    max-width: 100%;
+    margin-top: 30px;
+  }
+
+  .story-section .bio p {
+    font-size: 1.1rem;
+  }
+
+  .story-section .bio > :first-child,
+  .story-section .bio > :last-child {
+    display: none;
+  }
+}

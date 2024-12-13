@@ -1,0 +1,239 @@
+.reserve-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out;
+  backdrop-filter: blur(0px);
+  pointer-events: none; 
+}
+
+.reserve-overlay.active {
+  opacity: 1;
+  backdrop-filter: blur(10px);
+  pointer-events: auto; 
+}
+
+.reserve-section {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  font-family: var(--font-secondary);
+  filter: drop-shadow(3px 3px 5px rgba(79, 71, 71, 0.5));
+  transform: translateY(-20px);
+  transition: transform 0.2s ease-in-out;
+}
+
+.reserve-section.active {
+  transform: translateY(0);
+}
+
+.reserve-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--main-text);
+}
+
+.reserve-head h1 {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  color: var(--main-text);
+  cursor: pointer;
+}
+
+.reserve-head button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  padding-top: 2px;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+/* Safari-specific */
+@supports (-webkit-appearance: none) and (stroke-color: transparent) {
+  .reserve-head button {
+    padding-top: 0px;
+    padding-bottom: 2px
+  }
+}
+
+.reserve-head button:hover {
+  background-color: var(--primary-light);
+}
+
+.reserve-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--main-text);
+}
+
+.form-group select,
+.form-group .custom-date-input,
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23495057' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  color: var(--main-text);
+  cursor: pointer;
+}
+
+.date-time {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.date-time select {
+  height: 40px;
+  cursor: pointer;
+}
+
+.custom-datepicker .react-datepicker__day--selected {
+  background-color: var(--primary);
+}
+
+.custom-datepicker .react-datepicker__current-month,
+.custom-datepicker .react-datepicker-time__header,
+.custom-datepicker .react-datepicker-year-header {
+  padding-bottom: 2px; 
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.custom-date-input {
+  color: var(--main-text);
+  cursor: pointer;
+}
+
+.personal-info {
+  display: flex;
+  gap: 30px;
+}
+
+.personal-info .form-group {
+  width: 100%;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 15px;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-light);
+}
+
+button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.confirmation-text {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0px 5px 15px 5px;
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  color: var(--main-text);
+}
+
+.confirmation-text p:first-of-type {
+  font-size: 1.2rem;
+}
+
+.confirmation-text span {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+@media (max-width: 1000px) {
+  .reserve-section {
+    max-width: 90%;
+  }
+
+  .reserve-head button {
+    padding-top: 8px;
+    padding-bottom: 0px
+  }
+
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    .reserve-head button {
+      padding-top: 2px;
+      padding-bottom: 0px
+    }
+  }
+  
+  .timeslot-list {
+    grid-template-columns: repeat(2, fr);
+  }
+
+  .confirmation-text p:first-of-type {
+    font-size: 1.2rem;
+  } 
+
+  .confirmation-text span {
+    font-size: 0.9rem;
+  }
+
+  .reserve-head button {
+    padding-bottom: 5px;
+  }
+
+  .reserve-head h1 {
+    font-size: 1.2rem;
+  }
+}
