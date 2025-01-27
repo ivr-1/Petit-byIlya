@@ -44,14 +44,6 @@ function Contact() {
       />
       <section className="contact-container">
         <div className='contact-info'>
-            <h1> Contact Info </h1>
-            <a 
-                    href="https://byIlya.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                    Lets Connect!
-            </a>
         </div>
         <section className='restaurant-info'>
           <div>
